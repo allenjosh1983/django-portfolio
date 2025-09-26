@@ -8,15 +8,15 @@ class ProjectImageInline(admin.TabularInline):
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title","link")
+    list_display = ("title", "link")
     inlines = [ProjectImageInline]
-    search_fields = ("title","description")
+    search_fields = ("title", "description")
     list_filter = ("tags",)
+
 
 class TagAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
-
 
 
 admin.site.register(Tag, TagAdmin)
